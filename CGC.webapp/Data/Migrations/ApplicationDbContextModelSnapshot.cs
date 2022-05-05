@@ -72,7 +72,6 @@ namespace CGC.webapp.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -80,11 +79,9 @@ namespace CGC.webapp.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
@@ -137,7 +134,7 @@ namespace CGC.webapp.Data.Migrations
                         {
                             Id = "afa2bb1c-a7a4-56bc-d6ba-baaeff4d5479",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4bf78999-bd12-4b79-b47f-1bebd413c039",
+                            ConcurrencyStamp = "05513030-9d6a-4268-a786-281a05ee04be",
                             Datejoined = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Dateofbirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@CGC.com",
@@ -147,9 +144,9 @@ namespace CGC.webapp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CGC.COM",
                             NormalizedUserName = "ADMIN@CGC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEK7c+HrHxSM+7MF5uTNVaUMangYx5cjgM8Hhkq4PNI+3n9vqNgYKEQ6p5dbAha2tUA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN4FNV3gkug3sQ/F2poPC2xGxAjJOzIQbMgCtTX6O/pdVsfv6Go1VEuCsgx//XKnIQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b731310a-6b9f-48f3-af85-1ac0998f8afa",
+                            SecurityStamp = "7c0b2dd7-2468-49e0-b16b-b64865e792d0",
                             TwoFactorEnabled = false,
                             UserName = "admin@cgc.com"
                         });
@@ -280,14 +277,14 @@ namespace CGC.webapp.Data.Migrations
                         new
                         {
                             Id = "cfc6ac6b-b6d4-42dc-b6ae-dabbaeed6969",
-                            ConcurrencyStamp = "9177ed86-4272-496a-b768-a451e3e234e6",
+                            ConcurrencyStamp = "e80bea7a-5c8b-4625-9d5c-33e9c9bc2bfe",
                             Name = "administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "bad4ac6e-c6d3-42ac-b3be-dabbaaec6769",
-                            ConcurrencyStamp = "cbf0fda9-1d3a-41f4-a3ae-955aa5ce7b5b",
+                            ConcurrencyStamp = "c24164b9-a788-4fcd-b2ec-edff4cad548c",
                             Name = "user",
                             NormalizedName = "USER"
                         });

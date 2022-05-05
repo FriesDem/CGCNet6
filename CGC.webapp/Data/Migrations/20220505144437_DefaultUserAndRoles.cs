@@ -42,31 +42,35 @@ namespace CGC.webapp.Data.Migrations
                 oldType: "nvarchar(max)");
 
             migrationBuilder.AlterColumn<string>(
-                name: "Email",
+                name: "LastName",
                 table: "AspNetUsers",
-                type: "nvarchar(256)",
-                maxLength: 256,
-                nullable: false,
-                defaultValue: "",
+                type: "nvarchar(max)",
+                nullable: true,
                 oldClrType: typeof(string),
-                oldType: "nvarchar(256)",
-                oldMaxLength: 256,
-                oldNullable: true);
+                oldType: "nvarchar(max)");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "FirstName",
+                table: "AspNetUsers",
+                type: "nvarchar(max)",
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "bad4ac6e-c6d3-42ac-b3be-dabbaaec6769", "cbf0fda9-1d3a-41f4-a3ae-955aa5ce7b5b", "user", "USER" });
+                values: new object[] { "bad4ac6e-c6d3-42ac-b3be-dabbaaec6769", "c24164b9-a788-4fcd-b2ec-edff4cad548c", "user", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "cfc6ac6b-b6d4-42dc-b6ae-dabbaeed6969", "9177ed86-4272-496a-b768-a451e3e234e6", "administrator", "ADMINISTRATOR" });
+                values: new object[] { "cfc6ac6b-b6d4-42dc-b6ae-dabbaeed6969", "e80bea7a-5c8b-4625-9d5c-33e9c9bc2bfe", "administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Datejoined", "Dateofbirth", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "afa2bb1c-a7a4-56bc-d6ba-baaeff4d5479", 0, "4bf78999-bd12-4b79-b47f-1bebd413c039", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@CGC.com", true, "System", "Admin", false, null, "ADMIN@CGC.COM", "ADMIN@CGC.COM", "AQAAAAEAACcQAAAAEK7c+HrHxSM+7MF5uTNVaUMangYx5cjgM8Hhkq4PNI+3n9vqNgYKEQ6p5dbAha2tUA==", null, false, "b731310a-6b9f-48f3-af85-1ac0998f8afa", false, "admin@cgc.com" });
+                values: new object[] { "afa2bb1c-a7a4-56bc-d6ba-baaeff4d5479", 0, "05513030-9d6a-4268-a786-281a05ee04be", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@CGC.com", true, "System", "Admin", false, null, "ADMIN@CGC.COM", "ADMIN@CGC.COM", "AQAAAAEAACcQAAAAEN4FNV3gkug3sQ/F2poPC2xGxAjJOzIQbMgCtTX6O/pdVsfv6Go1VEuCsgx//XKnIQ==", null, false, "7c0b2dd7-2468-49e0-b16b-b64865e792d0", false, "admin@cgc.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -137,14 +141,24 @@ namespace CGC.webapp.Data.Migrations
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
-                name: "Email",
+                name: "LastName",
                 table: "AspNetUsers",
-                type: "nvarchar(256)",
-                maxLength: 256,
-                nullable: true,
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "",
                 oldClrType: typeof(string),
-                oldType: "nvarchar(256)",
-                oldMaxLength: 256);
+                oldType: "nvarchar(max)",
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<string>(
+                name: "FirstName",
+                table: "AspNetUsers",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "",
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)",
+                oldNullable: true);
         }
     }
 }
