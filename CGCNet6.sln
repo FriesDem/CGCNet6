@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.1.32210.238
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CouncilGamingClub.web", "CouncilGamingClub.web\CouncilGamingClub.web.csproj", "{FF8943F4-E8A7-4CBB-9CB3-C20ACB58DCFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CGC.webapp", "CGC.webapp\CGC.webapp.csproj", "{C9A35C73-DACC-46AF-9A67-3B3843D29DFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FF8943F4-E8A7-4CBB-9CB3-C20ACB58DCFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF8943F4-E8A7-4CBB-9CB3-C20ACB58DCFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF8943F4-E8A7-4CBB-9CB3-C20ACB58DCFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF8943F4-E8A7-4CBB-9CB3-C20ACB58DCFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A35C73-DACC-46AF-9A67-3B3843D29DFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A35C73-DACC-46AF-9A67-3B3843D29DFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A35C73-DACC-46AF-9A67-3B3843D29DFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A35C73-DACC-46AF-9A67-3B3843D29DFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A6149498-88EB-4453-8302-4C6587536F50}
+		SolutionGuid = {ED6528A2-3A2C-452A-B916-DA0C5C03B9EE}
 	EndGlobalSection
 EndGlobal

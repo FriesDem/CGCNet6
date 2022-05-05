@@ -6,10 +6,10 @@ namespace CouncilGamingClub.web.Data
     {
         public int Id { get; set; }
 
-        [ForeignKey("Customersccgc")]
+        [ForeignKey("CustomerId")]
 
-      public Customers Customers { get; set; }
-        public int Customersccgc { get; set; }
+      public Customers Customer { get; set; }
+        public int CustomerId { get; set; }
 
         public float OrderTotal { get; set; }
         public DateTime OrderDate { get; set; }
