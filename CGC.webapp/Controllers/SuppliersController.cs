@@ -9,9 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using CGC.webapp.Data;
 using CGC.webapp.Web.Configuration.Entities;
 using CGC.webapp.Web.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CGC.webapp.Controllers
 {
+    [Authorize]
     public class SuppliersController : Controller
     {
         private readonly ApplicationDbContext _context;
