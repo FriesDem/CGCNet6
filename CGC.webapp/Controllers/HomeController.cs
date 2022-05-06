@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 namespace CGC.webapp.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
