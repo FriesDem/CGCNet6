@@ -11,7 +11,6 @@ namespace CGC.webapp.Data
         [EmailAddress]
         public string? Email { get; set; }
 
-        [Phone]
         public int? Phone { get; set; }
 
     }
