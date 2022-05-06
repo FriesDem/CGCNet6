@@ -1,4 +1,6 @@
-﻿namespace CGC.webapp.Data
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CGC.webapp.Data
 {
     public class Customer
     {
@@ -8,8 +10,10 @@
 
         public string LastName { get; set; }
 
+        [EmailAddress]
         public string Email { get; set; }
 
+        [Phone]
         public int PhoneNumber { get; set; }
 
     }
