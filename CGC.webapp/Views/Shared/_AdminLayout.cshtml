@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using CGC.webapp.Data
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Employee> SignInManager
+@inject UserManager<Employee> UserManager
+
+<!DOCTYPE html>
 <html dir="ltr" lang="en">
 
 <head>
@@ -56,20 +61,17 @@
                     <!-- ============================================================== -->
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
-                        <b class="logo-icon">
+                        @*<b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
                             <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
+                        </b>*@
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo text -->
-                            <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                           CGCIMS
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -86,7 +88,7 @@
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav float-start me-auto">
+               @*     <ul class="navbar-nav float-start me-auto">
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
@@ -97,7 +99,7 @@
                                     class="srh-btn"><i class="mdi mdi-window-close"></i></a>
                             </form>
                         </li>
-                    </ul>
+                    </ul>*@
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
@@ -105,19 +107,50 @@
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
+
+                    @if (SignInManager.IsSignedIn(User))
+                        {
+                            
+                            <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../assets/images/users/profile.png" alt="user" class="rounded-circle" width="31">
+                                <img src="~/users/profile.png" alt="user" class="rounded-circle" width="31">
+                                <h5 class="m-b-0 user-name font-medium"> @User.Identity?.Name!</h5>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
-                                    My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i>
-                                    My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i>
-                                    Inbox</a>
-                            </ul>
-                        </li>
+                             
+                                </li>
+                                <li class ="p-15 m-t-10"> 
+                                <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                </form>
+                                </li>
+                            //</ul>
+                        
+                            
+                        }
+                        else
+                        {
+                            <li class ="p-15 m-t-10"> 
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register"> 
+                                    <i class="fa-solid fa-registered"></i>
+                                    <span> Register </span>
+                                    </a>
+                                <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button  type="submit" class="nav-link btn btn-link text-dark"></button>
+                                </form>
+                                </li>
+                                <li class ="p-15 m-t-10">
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">
+                                    <i class="fa-solid fa-arrow-right-to-arc"></i>
+                                    <span> Login </span>
+                                    </a>
+                                <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button  type="submit" class="nav-link btn btn-link text-dark"></button>
+                                </form>
+                                </li>
+                            
+                        }
+                        
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
@@ -135,6 +168,7 @@
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
+                [Authorize]
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         @*<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -149,33 +183,33 @@
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" asp-area="" asp-controller="Customers" asp-action="Index">
                                 <i class="fa-solid fa-people-group"></i>
-                                <span>Customers </span>
+                                <span> Customers </span>
                                 </a>
                                 </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" asp-area="" asp-controller="Suppliers" asp-action="Index">
                                <i class="fa-solid fa-truck-field"></i>
-                                <span>Suppliers </span>
+                                <span> Suppliers </span>
                                 </a>
                           <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"  asp-area="" asp-controller="Products" asp-action="Index">
                                <i class="fa-brands fa-product-hunt"></i>
-                                <span>Products </span>
+                                <span> Products </span>
                                 </a>
                                 <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" asp-area="" asp-controller="Inventories" asp-action="Index">
                                <i class="fa-solid fa-warehouse-full"></i>
-                                <span>Inventory </span>
+                                <span> Inventory </span>
                                 </a>
                                  <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" asp-area="" asp-controller="Orders" asp-action="Index">
                                <i class="fa-brands fa-salesforce"></i>
-                                <span>Orders </span>
+                                <span> Orders </span>
                                 </a>
                                  <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" asp-area="" asp-controller="Home" asp-action="Privacy">
                                <i class="fa-solid fa-key-skeleton-left-right"></i>
-                                <span>Privacy </span>
+                                <span> Privacy </span>
                                 </a>
                     </ul>
 
